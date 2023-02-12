@@ -25,22 +25,22 @@
 #  it should have a thirsty attribute, that is true by default
 #  it should have a drink method. When called, the thirsty attribute changes to false
 
-class Vampire
-    def initialize(name, pet = "bat")
-        @name = name
-        @pet = pet
-        @thirsty = true
-    end
+# class Vampire
+#     def initialize(name, pet = "bat")
+#         @name = name
+#         @pet = pet
+#         @thirsty = true
+#     end
 
-    def drink
-        @thirsty = false
-    end
-end
+#     def drink
+#         @thirsty = false
+#     end
+# end
 
-vampire1 = Vampire.new("Vladislaus")
-p vampire1
-vampire1.drink
-p vampire1
+# vampire1 = Vampire.new("Vladislaus")
+# p vampire1
+# vampire1.drink
+# p vampire1
 
 #  Write a Dragon class
 #  it should have a dynamic name attribute (string)
@@ -49,6 +49,35 @@ p vampire1
 #  it should have a is_hungry attribute that is true by default
 #  it should have a eat method. If the dragon eats 4 times, it is no longer hungry
 
+class Dragon
+    def initialize(name, rider, color)
+        @name = name
+        @rider = rider
+        @color = color
+        @is_hungry = true
+        @eat_counter = 0
+    end
+
+    def eat
+        if @eat_counter < 3
+            @eat_counter = @eat_counter + 1
+        elsif @eat_counter == 3
+            @is_hungry = false
+            @eat_counter = 0
+        end
+    end
+end
+
+dragon1 = Dragon.new("Ruby", "Jason", "Red")
+p dragon1
+dragon1.eat
+p dragon1
+dragon1.eat
+p dragon1
+dragon1.eat
+p dragon1
+dragon1.eat
+p dragon1
 
 #  Write a Hobbit class
 #  it should have a dynamic name attribute (string)
